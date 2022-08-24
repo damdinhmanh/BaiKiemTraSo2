@@ -165,7 +165,7 @@ public class Main {
             String inputNewPass = scanner.nextLine();
             loginService.forgotPassword(forgotUserEmail, inputNewPass);
             
-            System.out.println("Find password successfull!!!");
+            System.out.println("Reset password by Email successfull!!!");
             //DEBUG
             loginService.showAllUserInfor(listUser);
 
