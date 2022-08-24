@@ -107,6 +107,12 @@ public class UserModel implements IUserInterface<User, List<User>>{
     public void forgotPassword(String inputEmail, String newPassword) {
         User curUser = mapEmailObject.get(inputEmail);
         curUser.setPasswordLogin(newPassword);
+
+        mapUserPassword.remove(curUser.getUserName());
+        mapUserPassword.put(curUser.getUserName(), newPassword);
+
+        mapUserObject.remove(curUser.getUserName());
+        mapUserObject.put(curUser.getUserName(), curUser);
     }
 
     @Override

@@ -156,17 +156,19 @@ public class Main {
     }
 
     public static void forgotPasswordHandler() {
-        System.out.printf("\n\nInput your registered Email: ");
         scanner.nextLine();
+        System.out.printf("\n\nInput your registered Email: ");
         String forgotUserEmail = scanner.nextLine();
 
         if (loginService.isEmailExistedModel(forgotUserEmail)) {
+            System.out.printf("\nInput new password to reset: ");
             String inputNewPass = scanner.nextLine();
             loginService.forgotPassword(forgotUserEmail, inputNewPass);
             
+            System.out.println("Find password successfull!!!");
             //DEBUG
             loginService.showAllUserInfor(listUser);
-            
+
             loginRegisterPage();
         } else {
             System.out.println("Email account not existed, cannot recover password");
